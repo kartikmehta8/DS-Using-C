@@ -8,14 +8,15 @@ int front = -1, rear = -1;
 
 // Printing the queue.
 void printQueue() {
-    if (front == -1) printf("Underflow - Queue is Empty!\n");
+    if (front == -1 || front > rear) printf("Underflow - Queue is Empty!\n");
     else if (front == rear) printf("%d ", queue[rear]);
     else {
         for (int i = front; i < rear+1; i++) {
             printf("%d ", queue[i]);
         }
+        printf("\n");
     }
-    printf("\n");
+    
 }
 
 // Inserting the element into queue.
@@ -36,6 +37,7 @@ void enQueue(int data) {
 // Function for deletion of front element.
 void deQueue() {
     if (front == -1) printf("Underflow - Queue is Empty!\n");
+    else if (front == MAX-1) printf("Cannot DeQueue Any More!\n");
     else front++;
 }
 
@@ -78,9 +80,17 @@ int main() {
     enQueue(11);
     deQueue();
     deQueue();
-    
+    deQueue();
+    deQueue();
+    deQueue();
+    deQueue();
+    deQueue();
+    deQueue();
+    deQueue();
+    deQueue();
+    printf(" %d ", front);
     int peek_element = PEEK();
-    printf("PEEK ELEMENT : %d\n", peek_element);
+    printf("PEEK ELEMENT : %d", peek_element);
 
     return 0;
 }
