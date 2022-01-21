@@ -43,7 +43,7 @@ void deQueue() {
 
 // Accessing the front element.
 int PEEK() {
-    if (front == -1) printf("Underflow - Queue is Empty!\n");
+    if (front == -1 || front > rear) printf("Underflow - Queue is Empty!\n");
     else return queue[front];
 }
 
@@ -84,21 +84,8 @@ int main() {
     deQueue();
     deQueue();
     deQueue();
-    deQueue();
-    deQueue();
-    deQueue();
-    deQueue();
-    printf(" %d ", front);
     int peek_element = PEEK();
     printf("PEEK ELEMENT : %d", peek_element);
 
     return 0;
 }
-
-// OUTPUT ->
-// QUEUE IS EMPTY!
-// 1 2 3 4 5 
-// QUEUE IS NOT FULL!
-// 1 2 3 4 5 6 7 8 9 10 
-// Overflow - Queue is Full!
-// PEEK ELEMENT : 3
